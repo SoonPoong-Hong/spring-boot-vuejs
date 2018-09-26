@@ -6,9 +6,9 @@
 *.ear
 
 # Eclipse #
-.settings
-.project
-.classpath
+#.settings
+#.project
+#.classpath
 .studio
 target
 
