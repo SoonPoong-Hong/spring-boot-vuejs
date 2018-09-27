@@ -31,7 +31,8 @@ public class MyFilter implements Filter {
 
 		String uri = request.getRequestURI();
 		String remoteAddr = request.getRemoteAddr();
-		logger.warn("== {}", uri);
+		String method = request.getMethod();
+		logger.warn("== {}  {}", method, uri);
 		chain.doFilter(request, response);
 
 //		LoginUser loginUser = LoginUserHolder.register(request);
