@@ -4,8 +4,10 @@
     <h2>REST service call results</h2>
 
     <button @click="callRestService()">CALL Spring Boot REST backend service</button>
-
     <h4>Backend response: {{ response }}</h4>
+
+    <button @click="callHi()">callHi()</button>
+    <h4>{{ hiResponse }}</h4>
 
   </div>
 </template>
@@ -21,19 +23,32 @@
       return {
         msg: 'HowTo call REST-Services:',
         response: [],
-        errors: []
+        errors: [],
+        hiResponse: null
       }
     },
     methods: {
       // Fetches posts when the component is created.
       callRestService () {
-        AXIOS.get(`/hello`)
+        AXIOS.get(`/api/hello`)
           .then(response => {
             // JSON responses are automatically parsed.
             this.response = response.data
             console.log(response.data)
           })
           .catch(e => {
+            this.errors.push(e)
+          })
+      },
+      callHi () {
+        AXIOS.post(`/hong/hi`)
+          .then(response => {
+            // JSON responses are automatically parsed.
+            this.hiResponse = response.data
+            console.log(response.data)
+          })
+          .catch(e => {
+            alert(e)
             this.errors.push(e)
           })
       }

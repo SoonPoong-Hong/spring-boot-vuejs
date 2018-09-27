@@ -32,7 +32,7 @@
 
         <b-btn v-b-toggle.collapse3_inner size="sm" variant="danger">Full Request configuration</b-btn>
         <b-collapse id=collapse3_inner class="mt-2">
-          <p class="card-text">Config: {{ fullResponse.config }} </p>
+          <p class="card-text">{{ fullResponse }} </p>
         </b-collapse>
       </b-card>
     </b-collapse>
@@ -52,13 +52,13 @@ export default {
 
   data () {
     return {
-      msg: 'HowTo call REST-Services:',
+      msg: '홍',
       showResponse: false,
       response: '',
       fullResponse: {
         config: {
-          foo: '',
-          bar: ''
+          foo: 'x',
+          bar: 'xx'
         }
       },
       httpStatusCode: '',
@@ -70,17 +70,19 @@ export default {
   methods: {
     // Fetches posts when the component is created.
     callRestService () {
-      AXIOS.get(`/hello`)
+      AXIOS.get(`/hong/hong`)
         .then(response => {
           // JSON responses are automatically parsed.
           this.response = response.data
-          console.log(response.data)
+          console.log(response)
           this.httpStatusCode = response.status
           this.httpStatusText = response.statusText
           this.headers = response.headers
           this.fullResponse = response
         })
         .catch(e => {
+          console.log(e)
+          alert(e)
           this.errors.push(e)
         })
     }

@@ -1,0 +1,33 @@
+{
+	"data": {
+		"a": "aa",
+		"b": "bb"
+	},
+	"status": 201,
+	"statusText": "",
+	"headers": {
+		"date": "Thu, 27 Sep 2018 15:22:29 GMT",
+		"content-length": "33",
+		"content-type": "application/json;charset=UTF-8"
+	},
+	"config": {
+		"transformRequest": {
+			
+		},
+		"transformResponse": {
+			
+		},
+		"timeout": 0,
+		"xsrfCookieName": "XSRF-TOKEN",
+		"xsrfHeaderName": "X-XSRF-TOKEN",
+		"maxContentLength": -1,
+		"headers": {
+			"Accept": "application/json, text/plain, */*"
+		},
+		"method": "get",
+		"url": "/hong/hong"
+	},
+	"request": {
+		
+	}
+}
