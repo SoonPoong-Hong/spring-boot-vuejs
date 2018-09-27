@@ -1,6 +1,6 @@
 <template>
   <div class="bootstrap">
-    <h1>={{ msg }}=-</h1>
+    <h1>={{ msg }}=</h1>
     <h5>REST service call are easy to do with Vue.js, if you know how to do it.</h5>
     <p></p>
     <h6><b-badge variant="primary"> Let´s go!</b-badge> Call a Spring Boot REST backend service, by clicking a button:</h6>
@@ -52,7 +52,7 @@ export default {
 
   data () {
     return {
-      msg: 'Hong modified:',
+      msg: 'Hong ',
       showResponse: false,
       response: '',
       fullResponse: {
@@ -74,7 +74,7 @@ export default {
         .then(response => {
           // JSON responses are automatically parsed.
           this.response = response.data
-          console.log(response.data)
+          console.log(response)
           this.httpStatusCode = response.status
           this.httpStatusText = response.statusText
           this.headers = response.headers
