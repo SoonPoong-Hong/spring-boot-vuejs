@@ -52,7 +52,7 @@ export default {
 
   data () {
     return {
-      msg: 'Hong modified:',
+      msg: 'HowTo call REST-Services:',
       showResponse: false,
       response: '',
       fullResponse: {
@@ -81,7 +81,6 @@ export default {
           this.fullResponse = response
         })
         .catch(e => {
-          alert(e)
           this.errors.push(e)
         })
     }
