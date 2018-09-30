@@ -1,0 +1,2 @@
+windows cmd에서 git의 username, password 저장 
+git config credential.helper store
