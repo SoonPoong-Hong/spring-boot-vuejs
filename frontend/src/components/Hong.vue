@@ -3,10 +3,17 @@
     <h3>{{ msg }}</h3>
 
       <div v-for="item in items">
-        {{msg}} - {{ item.message }}
+        {{msg}} - {{ item.name }} - {{item.age}}
       </div>
       <div>============</div>
       <HongList></HongList>
+      <div>============</div>
+      <div v-for="item in list">
+        {{ item.name }} - {{item.age}}
+      </div>
+      <div>============</div>
+      <button @click="getList()">callHi()</button>
+      
   </div>
 </template>
 
@@ -22,13 +29,14 @@ export default {
     return {
       msg: "what's up",
       items: [
-        { message: 'Foo' },
-        { message: 'Bar' },
-        { message: 'Bar' },
-        { message: 'Bar' },
-        { message: 'Bar' },
-        { message: 'Bar' }
-      ]
+        { name: 'Foo', age:33 },
+        { name: 'Bar', age:33 },
+        { name: 'Bar', age:33 },
+        { name: 'Bar', age:33 },
+        { name: 'Bar', age:33 },
+        { name: 'Bar', age:33 }
+      ],
+      list : []
     }
   },
   components: {
@@ -36,16 +44,12 @@ export default {
   },    
   methods: {
     // Fetches posts when the component is created.
-    callRestService () {
+    getList () {
       AXIOS.get(`/hong/list`)
         .then(response => {
           // JSON responses are automatically parsed.
-          this.response = response.data
+          this.list = response.data
           console.log(response)
-          this.httpStatusCode = response.status
-          this.httpStatusText = response.statusText
-          this.headers = response.headers
-          this.fullResponse = response
         })
         .catch(e => {
           console.log(e)

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -59,10 +60,11 @@ public class HongRestController {
     @RequestMapping(path = "/list", method = {RequestMethod.POST, RequestMethod.GET}, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Object list () {
     	List<Object> list = new ArrayList<>();
+    	int age = Math.abs(new Random().nextInt()) % 30;
     	for(int i=0; i<10; i++) {
     		TestDto d = new TestDto();
     		d.name = "hong" + i;
-    		d.age = 30 + i;
+    		d.age = age + i;
     		list.add(d);
     	}
     	return list;
