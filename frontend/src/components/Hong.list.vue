@@ -1,39 +1,28 @@
 <template>
-  <div class="bootstrap">
-    <h3>{{ msg }}</h3>
+  <div class="xxx">
 
       <div v-for="item in items">
-        {{msg}} - {{ item.message }}
+        {{ item.message }}
       </div>
-      <div>============</div>
-      <HongList></HongList>
+
   </div>
 </template>
 
 <script>
 // import axios from 'axios'
 import {AXIOS} from './http-common'
-import HongList from '@/components/Hong.list'
 
 export default {
-  name: 'Hong',
+  name: 'HongList',
 
   data () {
     return {
-      msg: "what's up",
       items: [
         { message: 'Foo' },
-        { message: 'Bar' },
-        { message: 'Bar' },
-        { message: 'Bar' },
-        { message: 'Bar' },
         { message: 'Bar' }
       ]
     }
   },
-  components: {
-    HongList
-  },    
   methods: {
     // Fetches posts when the component is created.
     callRestService () {
