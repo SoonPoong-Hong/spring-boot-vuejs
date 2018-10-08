@@ -1,6 +1,8 @@
 package de.jonashackt.springbootvuejs.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,7 +18,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,19 +37,35 @@ public class HongRestController {
 
     @RequestMapping(path = "/hi", produces=MediaType.APPLICATION_XML_VALUE)
     public Object sayHello() {
-    	TestDto d = new TestDto();
-    	d.name = "홍홍홍";
-    	d.age = 33;
-    	return d;
+    	Map<String, String> m = new HashMap<>();
+    	m.put("a", "aa");
+    	m.put("b", "bb");
+    	return m;
     }
 
     @RequestMapping(path = "/hong", method = {RequestMethod.POST, RequestMethod.GET}, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, String> addNewUser () {
-    	Map<String, String> m = new HashMap<>();
-    	m.put("a", "aa");
-    	m.put("b", "bb");
-        return m;
+    public Object addNewUser () {
+    	List<Object> list = new ArrayList<>();
+    	for(int i=0; i<10; i++) {
+    		TestDto d = new TestDto();
+    		d.name = "hong";
+    		d.age = 33;
+    		list.add(d);
+    	}
+    	return list;
+    }
+    
+    @RequestMapping(path = "/list", method = {RequestMethod.POST, RequestMethod.GET}, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Object list () {
+    	List<Object> list = new ArrayList<>();
+    	for(int i=0; i<10; i++) {
+    		TestDto d = new TestDto();
+    		d.name = "hong" + i;
+    		d.age = 30 + i;
+    		list.add(d);
+    	}
+    	return list;
     }
 
     @GetMapping(path="/user/{id}")
