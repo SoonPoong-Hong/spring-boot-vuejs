@@ -61,10 +61,10 @@ public class HongRestController {
     public Object list () {
     	List<Object> list = new ArrayList<>();
     	int age = Math.abs(new Random().nextInt()) % 30;
-    	for(int i=0; i<10; i++) {
+    	for(int i=0; i<age; i++) {
     		TestDto d = new TestDto();
     		d.name = "hong" + i;
-    		d.age = age + i;
+    		d.age = i;
     		list.add(d);
     	}
     	return list;

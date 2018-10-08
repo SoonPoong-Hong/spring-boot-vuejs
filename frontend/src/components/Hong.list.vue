@@ -30,7 +30,7 @@ export default {
         .then(response => {
           // JSON responses are automatically parsed.
           this.response = response.data
-          console.log(response)
+          // console.log(response)
           this.httpStatusCode = response.status
           this.httpStatusText = response.statusText
           this.headers = response.headers
@@ -42,6 +42,12 @@ export default {
           this.errors.push(e)
         })
     }
+  },
+  created : function(){
+    console.log("== Hong.list.vue created")
+  },
+  computed : function(){
+    console.log("== Hong.list.vue computed")
   }
 }
 

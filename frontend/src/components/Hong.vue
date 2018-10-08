@@ -8,11 +8,12 @@
       <div>============</div>
       <HongList></HongList>
       <div>============</div>
+      <div>{{listLength}}</div>
+      <div>============</div>
+      <button @click="getList()">callHi()</button>
       <div v-for="item in list">
         {{ item.name }} - {{item.age}}
       </div>
-      <div>============</div>
-      <button @click="getList()">callHi()</button>
       
   </div>
 </template>
@@ -31,9 +32,6 @@ export default {
       items: [
         { name: 'Foo', age:33 },
         { name: 'Bar', age:33 },
-        { name: 'Bar', age:33 },
-        { name: 'Bar', age:33 },
-        { name: 'Bar', age:33 },
         { name: 'Bar', age:33 }
       ],
       list : []
@@ -49,7 +47,7 @@ export default {
         .then(response => {
           // JSON responses are automatically parsed.
           this.list = response.data
-          console.log(response)
+          // console.log(response)
         })
         .catch(e => {
           console.log(e)
@@ -57,7 +55,19 @@ export default {
           this.errors.push(e)
         })
     }
-  }
+  },
+  created : function(){
+    console.log("== Hong.vue created")
+    this.getList()
+  },
+  computed: {
+    // a computed getter
+    listLength: function () {
+      // `this` points to the vm instance
+      return this.list.length
+    }
+  }  
+
 }
 
 </script>
