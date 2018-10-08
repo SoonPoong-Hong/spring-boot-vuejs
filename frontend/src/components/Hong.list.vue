@@ -1,10 +1,11 @@
 <template>
   <div class="xxx">
-
-      <div v-for="item in items">
+      <div>=== sub 시작 ======</div>
+      <div v-for="item in list">
         {{ item.message }}
       </div>
-
+      <div>{{errorMsg}}</div>
+      <div>=== sub 끝 ======</div>
   </div>
 </template>
 
@@ -17,10 +18,8 @@ export default {
 
   data () {
     return {
-      items: [
-        { message: 'Foo' },
-        { message: 'Bar' }
-      ]
+      list: []
+      , errorMsg:""
     }
   },
   methods: {
@@ -29,25 +28,23 @@ export default {
       AXIOS.get(`/hong/list`)
         .then(response => {
           // JSON responses are automatically parsed.
-          this.response = response.data
+          this.list = response.data
           // console.log(response)
-          this.httpStatusCode = response.status
-          this.httpStatusText = response.statusText
-          this.headers = response.headers
-          this.fullResponse = response
         })
         .catch(e => {
           console.log(e)
-          alert(e)
-          this.errors.push(e)
+          // alert(e)
+          this.errorMsg = e;
         })
     }
   },
   created : function(){
     console.log("== Hong.list.vue created")
   },
-  computed : function(){
-    console.log("== Hong.list.vue computed")
+  computed : {
+    sub : function(){
+
+    }
   }
 }
 

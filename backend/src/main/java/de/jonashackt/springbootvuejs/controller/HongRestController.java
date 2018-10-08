@@ -50,7 +50,7 @@ public class HongRestController {
     	List<Object> list = new ArrayList<>();
     	for(int i=0; i<10; i++) {
     		TestDto d = new TestDto();
-    		d.name = "hong";
+    		d.name = "<hong>";
     		d.age = 33;
     		list.add(d);
     	}
