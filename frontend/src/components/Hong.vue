@@ -6,7 +6,7 @@
         {{msg}} - {{ item.name }} - {{item.age}}
       </div>
       <div>============</div>
-      <HongList></HongList>
+      <HongList9></HongList9>
       <div>============</div>
       <div>{{listLength}}</div>
       <div>============</div>
@@ -14,6 +14,9 @@
       <div v-for="item in list">
         {{ item.name }} - {{item.age}}
       </div>
+      <div>============</div>
+      <HongSub2></HongSub2>
+      
       
   </div>
 </template>
@@ -21,7 +24,8 @@
 <script>
 // import axios from 'axios'
 import {AXIOS} from './http-common'
-import HongList from '@/components/Hong.list'
+import HongList9 from '@/components/Hong.list'
+import HongSub2 from '@/components/Hong.sub2'
 
 export default {
   name: 'Hong',
@@ -38,7 +42,7 @@ export default {
     }
   },
   components: {
-    HongList
+    HongList9, HongSub2
   },    
   methods: {
     // Fetches posts when the component is created.
