@@ -8,17 +8,17 @@
       <div>============</div>
       <HongList9></HongList9>
       <div>============</div>
-      <div>{{listLength}}</div>
+      <div>{{listLength}} - {{val}}</div>
       <div>============</div>
       <button @click="getList()">callHi()</button>
       <div v-for="item in list">
         {{ item.name }} - {{item.age}}
       </div>
       <div>============</div>
-      <HongSub2 name="this is title"></HongSub2>
+      <HongSub2 name="뭬냐."></HongSub2>
       <HongSub2 v-bind:name="msg"></HongSub2>
       <HongSub2 :name="msg"></HongSub2>
-      <HongProp :list="list"></HongProp>
+      <HongProp :list="list" v-on:fromChild="val += $event"></HongProp>
       
       
   </div>
@@ -42,7 +42,8 @@ export default {
         { name: 'Bar', age:33 },
         { name: 'Bar', age:33 }
       ],
-      list : []
+      list : [],
+      val : 0
     }
   },
   components: {

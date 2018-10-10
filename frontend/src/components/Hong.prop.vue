@@ -4,22 +4,24 @@
     <div v-for="e in list">
       {{e.age}} - {{e.name}}
     </div>
+    <button v-on:click="$emit('fromChild', 1)">
+      Enlarge text
+    </button>
     <p>===Hong Prop 끝.</p>
   </div>
 </template>
 
 <script>
 // import axios from 'axios'
-import {AXIOS} from './http-common'
+import { AXIOS } from "./http-common";
 
 export default {
-  // name: 'HongSub2',
-  props: ['list'],
-  created: function(){
-    console.log("== Hong Prop created")
+  // name: 'HongSub2',  => name은 꼭 필요한게 아닌거 같다.
+  props: ["list"],
+  created: function() {
+    console.log("== Hong Prop created");
   }
-}
-
+};
 </script>
 
 
@@ -29,7 +31,8 @@ p {
   margin-bottom: 20px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
