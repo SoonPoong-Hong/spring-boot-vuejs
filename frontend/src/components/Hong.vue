@@ -10,6 +10,10 @@
       <div>============</div>
       <div>{{listLength}} - {{val}}</div>
       <div>============</div>
+      <input v-model="val">
+      <input v-bind:value="val">
+      <input :value="val">
+      <div>============</div>
       <button @click="getList()">callHi()</button>
       <div v-for="item in list">
         {{ item.name }} - {{item.age}}

@@ -2,8 +2,11 @@ package de.jonashackt.springbootvuejs.config;
 
 import java.util.List;
 
+import org.apache.catalina.Context;
+import org.apache.catalina.Wrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.web.embedded.tomcat.TomcatContextCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,11 +15,10 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -51,8 +53,15 @@ public class WebConfig extends WebMvcConfigurerAdapter  {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
+    
+    
 
-    @Bean
+    @Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/examples/**").addResourceLocations("/examples/") ;
+	}
+
+	@Bean
     public Object testBean(Environment env){
     	logger.info("=== env : {}", env);
     	return new Object();
@@ -80,6 +89,58 @@ public class WebConfig extends WebMvcConfigurerAdapter  {
     	return reg;
     }
 
-
+//    @Bean
+//    public EmbeddedServletContainerCustomizer customizer() {
+//        return new EmbeddedServletContainerCustomizer() {
+//
+//            @Override
+//            public void customize(ConfigurableEmbeddedServletContainer container) {
+//                if (container instanceof TomcatEmbeddedServletContainerFactory) {
+//                    customizeTomcat((TomcatEmbeddedServletContainerFactory) container);
+//                }
+//            }
+//
+//            private void customizeTomcat(TomcatEmbeddedServletContainerFactory tomcat) {
+//                tomcat.addContextCustomizers(new TomcatContextCustomizer() {
+//
+//                    @Override
+//                    public void customize(Context context) {
+//                        Wrapper defServlet = (Wrapper) context.findChild("default");
+//                        defServlet.addInitParameter("listings", "true");
+//                    }
+//                });
+//            }
+//        };
+//    }
+//    
+//    @Component
+//    public class MyTomcatWebServerCustomizer
+//    		implements WebServerFactoryCustomizer<TomcatServletWebServerFactory> {
+//
+//    	@Override
+//    	public void customize(TomcatServletWebServerFactory factory) {
+//    		factory.addContextCustomizers();
+//    	}
+//    }
+//    
+//    @Component
+//    public class AppContainerCustomizer implements EmbeddedServletContainerCustomizer {
+//     
+//        @Override
+//        public void customize(ConfigurableEmbeddedServletContainer container) 
+//        {
+//            container.setPort(9090);
+//        }
+//    }
+//    
+//    @Component
+//    public class CustomContainer implements EmbeddedServletContainerCustomizer {
+//      
+//        @Override
+//        public void customize(ConfigurableEmbeddedServletContainer container) {
+//            container.setPort(8080);
+//            container.setContextPath("");
+//         }
+//    }
 
 }
