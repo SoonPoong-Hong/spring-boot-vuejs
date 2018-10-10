@@ -60,7 +60,7 @@ public class HongRestController {
     @RequestMapping(path = "/list", method = {RequestMethod.POST, RequestMethod.GET}, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Object list () {
     	List<Object> list = new ArrayList<>();
-    	int age = Math.abs(new Random().nextInt()) % 30;
+    	int age = Math.abs(new Random().nextInt()) % 10;
     	for(int i=0; i<age; i++) {
     		TestDto d = new TestDto();
     		d.name = "hong" + i;

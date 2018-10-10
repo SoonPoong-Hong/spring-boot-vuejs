@@ -15,7 +15,10 @@
         {{ item.name }} - {{item.age}}
       </div>
       <div>============</div>
-      <HongSub2></HongSub2>
+      <HongSub2 name="this is title"></HongSub2>
+      <HongSub2 v-bind:name="msg"></HongSub2>
+      <HongSub2 :name="msg"></HongSub2>
+      <HongProp :list="list"></HongProp>
       
       
   </div>
@@ -26,13 +29,14 @@
 import {AXIOS} from './http-common'
 import HongList9 from '@/components/Hong.list'
 import HongSub2 from '@/components/Hong.sub2'
+import HongProp from '@/components/Hong.prop'
 
 export default {
   name: 'Hong',
 
   data () {
     return {
-      msg: "what's up",
+      msg: "what's up?",
       items: [
         { name: 'Foo', age:33 },
         { name: 'Bar', age:33 },
@@ -42,7 +46,7 @@ export default {
     }
   },
   components: {
-    HongList9, HongSub2
+    HongList9, HongSub2, HongProp
   },    
   methods: {
     // Fetches posts when the component is created.
