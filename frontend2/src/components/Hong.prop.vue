@@ -7,10 +7,6 @@
     <button v-on:click="$emit('fromChild', 1)">
       Enlarge text
     </button>
-    <input 
-      v-bind:value="value"
-      v-on:input="$emit('input'"
-    >
     <p>===Hong Prop 끝.</p>
   </div>
 </template>
@@ -21,7 +17,7 @@ import { AXIOS } from "./http-common";
 
 export default {
   // name: 'HongSub2',  => name은 꼭 필요한게 아닌거 같다.
-  props: ["list", "value"],
+  props: ["list"],
   created: function() {
     console.log("== Hong Prop created");
   }
