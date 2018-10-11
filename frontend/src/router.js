@@ -5,6 +5,7 @@ import Service from '@/components/Service'
 import Bootstrap from '@/components/Bootstrap'
 import User from '@/components/User'
 import Hong from '@/components/Hong'
+import Hong2 from '@/components/Hong2'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
     {
       path: '/hong',
       name: 'Hong',
+      component: Hong
+    },
+    {
+      path: '/hong2',
+      name: 'Hong2',
       component: Hong
     }
   ]

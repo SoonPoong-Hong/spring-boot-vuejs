@@ -6,6 +6,7 @@
       <router-link to="/bootstrap">Bootstrap</router-link> |
       <router-link to="/user">User</router-link> | 
       <router-link to="/hong">Hong</router-link> | 
+      <router-link to="/hong2">Hong2</router-link> | 
     </div>
     <router-view :hellomsg="msg"></router-view>
   </div>
