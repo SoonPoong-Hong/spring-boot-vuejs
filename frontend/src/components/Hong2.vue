@@ -1,5 +1,6 @@
 <template>
   <div class="bootstrap">
+    <div>================</div>
     <div>{{ msg }}</div>
     <div>{{ val2 }}</div>
 
@@ -25,7 +26,7 @@ export default {
         { name: 'Bar', age:33 }
       ],
       list : [],
-      val : 0
+      val2 : 0
     }
   },
   components: {

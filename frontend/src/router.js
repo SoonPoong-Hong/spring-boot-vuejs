@@ -39,7 +39,7 @@ export default new Router({
     {
       path: '/hong2',
       name: 'Hong2',
-      component: Hong
+      component: Hong2
     }
   ]
 })
