@@ -8,6 +8,7 @@
       <router-link to="/hong">Hong</router-link> | 
       <router-link to="/hong2">Hong2</router-link> | 
       <router-link to="/semantic-test">semantic-test</router-link> | 
+      <router-link to="/semantic-test2">semantic-test2</router-link> | 
     </div>
     <router-view :hellomsg="msg"></router-view>
   </div>

@@ -7,6 +7,7 @@ import User from '@/components/User'
 import Hong from '@/components/Hong'
 import Hong2 from '@/components/Hong2'
 import SemanticTest from '@/components/Semantic-test'
+import SemanticTest2 from '@/components/Semantic-test2'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/semantic-test',
       name: 'Semantic-test',
       component: SemanticTest
+    },
+    {
+      path: '/semantic-test2',
+      name: 'Semantic-test2',
+      component: SemanticTest2
     }
 
   ]

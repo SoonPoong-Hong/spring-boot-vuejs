@@ -5,13 +5,17 @@ import router from './router'
 // import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import SuiVue from 'semantic-ui-vue';
+// import SuiVue from 'semantic-ui-vue';
 // import 'semantic-ui-css/semantic.min.css'
 // import 'semantic-ui-css/semantic.min.css'
-import 'semantic-ui-css/semantic.min.css';
+
+// light wieght semantic
+// import 'semantic-ui-css/semantic.min.css';
+// full semantic
 import '../semantic/dist/semantic.min.css';
 
-// import SuiVue from 'semantic-ui-vue';
+// semantic-ui-vue 를 사용할때
+import SuiVue from 'semantic-ui-vue';
 Vue.use(SuiVue);
 
 Vue.config.productionTip = false

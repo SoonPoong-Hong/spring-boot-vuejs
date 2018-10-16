@@ -8,6 +8,53 @@
     <div is="sui-button">This is a div</div>
     <sui-button primary>Primary</sui-button>
     <sui-button secondary>Secondary</sui-button>    
+
+    <div class="ui input focus">
+      <input type="text" placeholder="Search...">
+    </div>    
+    <br>
+    <button class="ui secondary button">
+      Okay
+    </button>
+    <button class="ui button">
+      Cancel
+    </button>   
+
+    <button class="ui primary button">
+      Save
+    </button>
+    <button class="ui button">
+      Discard
+    </button>     
+
+    <div class="ui labeled button" tabindex="0">
+      <div class="ui red button">
+        <i class="heart icon"></i> Like
+      </div>
+      <a class="ui basic red left pointing label">
+        1,048
+      </a>
+    </div>
+    <div class="ui labeled button" tabindex="0">
+      <div class="ui basic blue button">
+        <i class="fork icon"></i> Forks
+      </div>
+      <a class="ui basic left pointing blue label">
+        1,048
+      </a>
+    </div>
+
+  <sui-menu tabular>
+    <a
+      is="sui-menu-item"
+      v-for="item in items"
+      :key="item"
+      :active="isActive(item)"
+      :content="item"
+      @click="select(item)"
+    />
+  </sui-menu>
+
   </div>  
 </div>
 
@@ -16,6 +63,7 @@
 <script>
 // import axios from 'axios'
 import { AXIOS } from "./http-common";
+
 // import SuiVue from "semantic-ui-vue";
 
 // import SuiVue from 'semantic-ui-vue'
@@ -24,19 +72,15 @@ import { AXIOS } from "./http-common";
 // import 'semantic-ui-css/semantic.min.css'
 // import 'semantic-ui-less/semantic.less';
 
+// import SuiVue from "semantic-ui-vue";
+
 export default {
   name: "Hong",
 
   data() {
     return {
-      msg: "what's up?",
-      items: [
-        { name: "Foo", age: 33 },
-        { name: "Bar", age: 33 },
-        { name: "Bar", age: 33 }
-      ],
-      list: [],
-      val2: 0
+      items: ['Bio', 'Photos'],
+      active: 'Bio',      
     };
   },
   components: {},
@@ -54,7 +98,13 @@ export default {
           alert(e);
           this.errors.push(e);
         });
-    }
+    },
+    isActive(name) {
+      return this.active === name;
+    },
+    select(name) {
+      this.active = name;
+    },    
   },
   created: function() {
     console.log("== Hong.vue created");
@@ -74,5 +124,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>
