@@ -2,11 +2,8 @@ package de.jonashackt.springbootvuejs.config;
 
 import java.util.List;
 
-import org.apache.catalina.Context;
-import org.apache.catalina.Wrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.web.embedded.tomcat.TomcatContextCustomizer;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +14,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -27,7 +24,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 @Configuration
 //@EnableWebMvc // => 이것을 포함하면 여러가지 부작용이 있다.
 //                     applications.properties에 jsp view 설정해 놓은게 안 먹고. jackson XML converter도 안된다.
-public class WebConfig extends WebMvcConfigurerAdapter  {
+public class WebConfig implements WebMvcConfigurer  {
 	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
