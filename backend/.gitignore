@@ -27,7 +27,7 @@ selenium-debug.log
 *.war
 *.ear
 
-/target/
+/target
 
 # Eclipse
 .classpath
@@ -35,7 +35,7 @@ selenium-debug.log
 .settings
  
 # Intellij
-.idea/
+.idea
 *.iml
 *.iws
  
@@ -43,9 +43,9 @@ selenium-debug.log
 .DS_Store
  
 # Maven
-log/
-target/
-bin/
+log
+target
+bin
 .mvn
 
 *.tmp
