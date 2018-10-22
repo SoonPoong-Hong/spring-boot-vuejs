@@ -17,3 +17,48 @@ selenium-debug.log
 *.sln
 /test/
 #/package-lock.json
+
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+ 
+# Intellij
+.idea/
+*.iml
+*.iws
+ 
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+target/
+bin/
+.mvn
+
+*.tmp
+*.bak
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# sbteclipse plugin
+.target
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+#.scala_dependencies
+#.worksheet
