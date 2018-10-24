@@ -1,16 +1,43 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Hello</router-link> |
-      <router-link to="/callservice">Service</router-link> |
-      <router-link to="/bootstrap">Bootstrap</router-link> |
-      <router-link to="/user">User</router-link> | 
-      <router-link to="/hong">Hong</router-link> | 
-      <router-link to="/hong2">Hong2</router-link> | 
-      <router-link to="/semantic-test">semantic-test</router-link> | 
-      <router-link to="/semantic-test2">semantic-test2</router-link> | 
-    </div>
-    <router-view :hellomsg="msg"></router-view>
+      <div class="ui fixed inverted menu">
+        <div class="ui container">
+          <a href="#" class="header item">
+            <img class="logo" src="assets/images/logo.png">
+            Project Name
+          </a>
+          <a href="#" class="item">Home</a>
+          <div class="ui simple dropdown item">
+            Dropdown <i class="dropdown icon"></i>
+            <div class="menu">
+              <router-link class="item" to="/callservice">Service</router-link>
+              <router-link class="item" to="/hong">Hong</router-link>
+              <a class="item" href="#">Link Item</a>
+              <div class="divider"></div>
+              <div class="header">Header Item</div>
+              <div class="item">
+                <i class="dropdown icon"></i>
+                Sub Menu
+                <div class="menu">
+                  <router-link class="item" to="/semantic-test2">semantic-test2</router-link>
+                  <a class="item" href="#">Link Item</a>
+                  <a class="item" href="#">Link Item</a>
+                </div>
+              </div>
+              <a class="item" href="#">Link Item</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="ui main text container">
+        <h1 class="ui header">Semantic UI Fixed Template</h1>
+        <router-view :hellomsg="msg"></router-view>
+      </div>
+
+
+
   </div>
 </template>
 
@@ -26,24 +53,20 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 20px;
-}
+<style scoped>
 
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-     color: #42b983;
-    }
+  .ui.menu .item img.logo {
+    margin-right: 1.5em;
   }
-}
+  .main.container {
+    margin-top: 4em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+
 </style>
