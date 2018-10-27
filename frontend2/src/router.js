@@ -6,6 +6,7 @@ import Bootstrap from '@/components/Bootstrap'
 import User from '@/components/User'
 import Hong from '@/components/Hong'
 import Hong2 from '@/components/Hong2'
+import Hong_basic from '@/components/Hong_basic'
 import SemanticTest from '@/components/Semantic-test'
 import SemanticTest2 from '@/components/Semantic-test2'
 
@@ -52,7 +53,13 @@ export default new Router({
       path: '/semantic-test2',
       name: 'Semantic-test2',
       component: SemanticTest2
+    },
+    {
+      path: '/Hong_basic',
+      name: 'Hong_basic',
+      component: Hong_basic
     }
+
 
   ]
 })

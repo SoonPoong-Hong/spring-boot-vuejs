@@ -18,7 +18,7 @@ import '../semantic/dist/semantic.min.css';
 import SuiVue from 'semantic-ui-vue';
 Vue.use(SuiVue);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
 // Bootstrap
 // Vue.use(BootstrapVue)

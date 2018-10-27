@@ -12,6 +12,7 @@
             <div class="menu">
               <router-link class="item" to="/callservice">Service</router-link>
               <router-link class="item" to="/hong">Hong</router-link>
+              <router-link class="item" to="/Hong_basic">Hong basic</router-link>
               <a class="item" href="#">Link Item</a>
               <div class="divider"></div>
               <div class="header">Header Item</div>
