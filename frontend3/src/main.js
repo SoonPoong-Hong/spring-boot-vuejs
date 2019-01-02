@@ -13,10 +13,10 @@ import router from './router'
 // light wieght semantic
 // import 'semantic-ui-css/semantic.min.css';
 // full semantic
-import '../semantic/dist/semantic.min.css';
+// import '../semantic/dist/semantic.min.css';
 
 // semantic-ui-vue 를 사용할때
-import SuiVue from 'semantic-ui-vue';
+// import SuiVue from 'semantic-ui-vue';
 Vue.use(SuiVue);
 
 Vue.config.productionTip = true
