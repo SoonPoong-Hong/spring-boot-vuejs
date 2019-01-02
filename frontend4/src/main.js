@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
-// import 'font-awesome/css/font-awesome.css';
+import 'font-awesome/css/font-awesome.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loade
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 
