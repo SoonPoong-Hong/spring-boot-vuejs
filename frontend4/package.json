@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mdi/font": "^3.3.92",
+    "babel-polyfill": "^6.26.0",
     "font-awesome": "^4.7.0",
     "vue": "^2.5.21",
     "vue-router": "^3.0.1",
